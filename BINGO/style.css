@@ -1,0 +1,46 @@
+ body {
+      background: #fff7cc;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .panel {
+      /*表示数字*/
+        display: inline-block;
+        width: 200px;
+        margin-bottom: 30px;
+        color: #ff5500;
+        font-weight: bold;
+        font-size: 280px;
+        line-height: 260px;
+        background: #fff;
+    }
+    .panel + .panel {
+        margin-left: -20px;
+    }
+    .panel.unmatched {
+        opacity: 0.5;
+    }
+
+
+    /*結果用配列*/
+    .bingo {
+        display: inline-block;
+        width: 80px;
+        padding: 3.5px;
+        margin-bottom: 7.5px;
+        color: #ff5500;
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 70px;
+        background: #fff;
+    }
+    .bingo + .bingo {
+        margin-left: 5px;
+    }
+    .bingo.unmatched {
+        opacity: 1.0;
+        /*background: #33bbff ;*/
+        background: #66FFFF;
+    }

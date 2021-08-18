@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ビンゴ抽選機</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <container id="app">
+    <div>
+      <div class="panel" id="panel1">︎{{panel1}}</div>
+      <div class="panel" id="panel10">{{panel10}}</div>
+    </div>
+    <!--BGMはここで鳴らす-->
+<audio preload="auto" autoplay loop>
+<source src="bgm2.mp3">
+</audio>
+<!--BGMはここで鳴らす-->
+<!--音の素材はここ-->
+<audio id="sound-file" preload="auto"  play loop>
+	<source src="kaiten.mp3" type="audio/mp3">
+</audio>
+<audio id="sound-file2" preload="auto"  play>
+	<source src="decision-13.mp3" type="audio/mp3">
+</audio>
+<audio id="sound-file3" preload="auto"  play>
+	<source src="kansei.mp3" type="audio/mp3">
+</audio>
+<!---------------------->
+<a onclick="sound3()"><button>当選</button></a>
+    <div class="ui centered grid">
+      <div class="two wide tablet computer  center aligned padded column">
+        <a onclick="sound2()"><!---->
+        <button id="stopButton" v-model="stopButton" v-disable="stopButton" v-on:click="runStop()" class="ui fluid big blue button">STOP</button>
+      </a>
+      </div>
+    </div>
+
+    <div class="ui centered grid">
+      <div class="five wide tablet computer  center aligned padded column">
+        <a onclick="sound()">
+        <button id="spinButton" v-model="spinButton" v-disable="spinButton" class="ui fluid red button" v-on:click="runSlot()">SPIN</button>
+      </a>
+      </div>
+    </div>
+
+    <div class="ui centered grid">
+      <div class="nine wide tablet computer  center aligned padded column">
+        <div class="container">
+          <div class="bingo" v-bind:style="pStyle" v-bind:id="item" v-for="item in items">
+            {{ item }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </container>
+</body>
+<script type="text/javascript" src="bingo.js"></script>
+</html>

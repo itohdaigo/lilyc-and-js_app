@@ -1,0 +1,118 @@
+#content {
+    z-index: 10;
+  }
+  #overlay {
+    z-index: 20;
+  }
+  
+  #container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #container p {
+    font-size: 4vw;
+    font-family: "Sawarabi Mincho";
+    color: #FFF;
+    padding: 1em;
+    text-align: center;
+    user-select: none;
+  }
+  
+  #media {
+    position: absolute;
+    right: 10px;
+    bottom: 30px;
+    background: rgba(0,0,0,0.2);
+  }
+  
+  #meta {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    padding: 5px;
+    background: rgba(0,0,0,0.2);
+  }
+  
+  #control {
+    position: absolute;
+    left: 10px;
+    bottom: 30px;
+    padding: 5px;
+    background: rgba(0,0,0,0.2);
+  }
+  
+  #control > button {
+    margin-right: 5px;
+  }
+  #control > button:last-child {
+    margin-right: 0;
+  }
+  
+  #beatbar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 20px;
+    background: #000;
+  }
+
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(117, 114, 113, 0.8) 10%, rgba(40, 49, 77, 0.8) 30%, rgba(29, 35, 71, 0.8) 50%, rgba(19, 25, 28, 0.8) 80%, rgba(15, 14, 14, .8) 100%), url(https://38.media.tumblr.com/tumblr_m00c3czJkM1qbukryo1_500.gif);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  
+
+/* クリックイベントの実装 */
+
+/* クリックしたら波紋が広がる */
+#btn{
+  /*ボタンのデフォルトのデザインをリセット*/
+  border: none;
+  outline: none;
+  /*position: relative; は必須*/
+  position: relative;
+  height: 47px;
+  width: 150px;
+  border-radius: 3px;
+  display: block;
+  margin: 100px auto;
+  color: white;
+  background-color: #448AFF;
+  box-shadow: 0.9px 1.0px 2px rgba(0,0,0,0.2);
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  /*波紋のはみ出しを消す*/
+  overflow: hidden;
+}
+
+.ripple {
+  /*position: absolute; は必須*/
+  position: absolute;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /*今回はアニメーションの名前，変化の時間，繰り返し回数*/
+  animation: rippleEffect 1200ms 1;
+  opacity: 0;
+}
+@keyframes rippleEffect {
+  from {
+      transform: scale(1);
+      opacity: 0.45;
+  }
+  to {
+      transform: scale(50);
+      opacity: 0;
+  }
+}
